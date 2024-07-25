@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FlowDocumentClipboard": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

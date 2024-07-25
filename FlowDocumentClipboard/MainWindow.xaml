@@ -1,0 +1,50 @@
+﻿<Window x:Class="FlowDocumentClipboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowDocumentClipboard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DocumentViewer Grid.Row="0">
+            <DocumentViewer.Document>
+                <FixedDocument>
+                    <!-- Page 1 -->
+                    <PageContent>
+                        <FixedPage Width="800" Height="600" Background="White">
+                            <!--<TextBox Text="Hello, first page of FixedPage!" FontSize="24" Margin="100,100,0,0" Focusable="False"/>-->
+                            <Glyphs FontUri="file:///C:/Windows/Fonts/arial.ttf"
+                                    FontRenderingEmSize="24"
+                                    Fill="Black"
+                                    UnicodeString="Hello, FixedPage with Glyphs!"
+                                    OriginX="100"
+                                    OriginY="100" />
+                            <Glyphs FontUri="file:///C:/Windows/Fonts/arial.ttf"
+                                    FontRenderingEmSize="12"
+                                    Fill="Black"
+                                    UnicodeString="This is the content. Copy this cotent to clipboard to check the data Total stockholders&apos; equity64,91270,580"
+                                    OriginX="100"   
+                                    OriginY="150"/>
+                        </FixedPage>
+                    </PageContent>
+                    <!-- Page 2 -->
+                    <PageContent>
+                        <FixedPage Width="800" Height="600" Background="White">
+                            <TextBox Text="This is the second page!" FontSize="24" Margin="100,100,0,0"/>
+                            
+                        </FixedPage>
+                    </PageContent>
+                </FixedDocument>
+            </DocumentViewer.Document>
+           
+        </DocumentViewer>
+        <TextBox Text="Unit.net Console Runner " Grid.Row="2"/>
+        <Button x:Name="ClipboardButton" Grid.Row="1" Click="CheckClipboardData" Content="Check Clipboard Data" Margin="24,11,606,54" ClickMode="Press"/>
+    </Grid>
+</Window>
